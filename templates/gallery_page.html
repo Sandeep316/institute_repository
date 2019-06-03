@@ -1,0 +1,60 @@
+{% extends 'base2.html' %}
+{% load staticfiles %}
+
+<html>
+<head>
+    <title>gallrey page</title>
+</head>
+
+<body>
+{% block content %}
+    <style>
+    img{
+        border: 4px solid red;
+        padding: 0px;
+        margin-top: 20px;
+        border-radius: 10px ;
+    }
+    .container img{
+        filter: grayscale(100%);
+        transition: 1.3s;
+    }
+    .container img:hover{
+        filter: grayscale(0);
+        transform: scale(1.2);
+    }
+    body{
+        background-color: #2ecc71;
+    }
+</style>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+    <a href="{% static 'images/pic6.jpg' %}" > <img src="{% static 'images/pic1.jpg' %}" data-lightbox="container" style="width:100%;height:50%"></a>
+        </div>
+        <div class="col-md-6">
+    <a href="{% static 'images/pic5.jpg' %}" data-lightbox="container"> <img src="{% static 'images/pic2.jpg' %}" style="width:100%;height:50%"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+    <a href="{% static 'images/pic4.jpg' %}" data-lightbox="container"> <img src="{% static 'images/pic3.jpg' %}" style="width:100%;height:50%"></a>
+        </div>
+        <div class="col-md-6">
+    <a href="{% static 'images/pic3.jpg' %}" data-lightbox="container"> <img src="{% static 'images/pic4.jpg' %}" style="width:100%;height:50%"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+    <a href="{% static 'images/pic2.jpg' %}" data-lightbox="container"> <img src="{% static 'images/pic5.jpg' %}" style="width:100%;height:50%"></a>
+        </div>
+        <div class="col-md-6">
+    <a href="{% static 'images/pic1.jpg' %}" data-lightbox="container"> <img src="{% static 'images/pic6.jpg' %}" style="width:100%;height:50%"></a>
+        </div>
+
+    </div>
+
+
+{% endblock %}
+</body>
+</html>

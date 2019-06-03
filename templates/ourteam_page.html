@@ -1,0 +1,38 @@
+{% extends 'base2.html' %}
+{% load staticfiles %}
+<html>
+<head>
+    <title>our team page</title>
+</head>
+<body>
+{% block content %}
+       <link rel="stylesheet" href="{% static 'css/team.css' %}">
+
+<div class="team">
+     <h1>Our Team</h1>
+     <samp class="sp1"></samp>
+     <div class="pics">
+         <a href="#p1"><img src="{% static 'images/pic1.jpg' %}"></a>
+         <a href="#p2"><img src="{% static 'images/pic1.jpg' %}"></a>
+         <a href="#p3"><img src="{% static 'images/pic1.jpg' %}"></a>
+     </div>
+     <div class="section" id="p1">
+         <h1 class="name">Narayana</h1>
+         <samp class="sp1"></samp>
+         <center><p>Python Narayana</p></center>
+     </div>
+     <div class="section" id="p2">
+         <h1 class="name">Srinu</h1>
+         <samp class="sp1"></samp>
+         <center><p>REST API Sirnu</p></center>
+     </div>
+     <div class="section" id="p3">
+         <h1 class="name">Satya</h1>
+         <samp class="sp1"></samp>
+         <center><p>Django</p></center>
+     </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

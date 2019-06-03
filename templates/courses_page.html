@@ -1,0 +1,74 @@
+{% extends 'base2.html' %}
+<html>
+<head>
+    <title>courses page</title>
+</head>
+<body>
+{% block content %}
+    <style>
+    table{
+        width: 100%;
+        text-align: center;
+    }
+    td,th{
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    tbody:nth-of-type(odd){
+        background-color: green;
+        color: white;
+    }
+    tbody:nth-of-type(even){
+        background-color: yellow;
+        color: white;
+    }
+    thead{
+        background-color: red;
+        color: white;
+    }
+    body{
+        background-color: cyan;
+    }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                {% if courses %}
+                <center>Courses Details</center>
+                <table border="2">
+                    <thead>
+                    <tr>
+                        <th>Courses ID</th>
+                        <th>Courses Name</th>
+                        <th>Courses Dur</th>
+                        <th>Courses Fee</th>
+                        <th>Start Date</th>
+                        <th>Start Time</th>
+                        <th>Trainer Name</th>
+                        <th>Trainer Exp</th>
+                    </tr>
+                    </thead>
+                    {% for i in courses %}
+                    <tbody>
+                    <tr>
+                        <td>{{ i.course_id }}</td>
+                        <td>{{ i.course_name }}</td>
+                        <td>{{ i.course_dur }}</td>
+                        <td>{{ i.course_fee }}</td>
+                        <td>{{ i.start_date }}</td>
+                        <td>{{ i.start_time }}</td>
+                        <td>{{ i.trainer_name }}</td>
+                        <td>{{ i.trainer_exp }}</td>
+                    </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            {% else %}
+            <center>No Data Available</center>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
